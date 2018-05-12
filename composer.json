@@ -1,0 +1,87 @@
+{
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=7.0.0",
+        "barryvdh/laravel-dompdf": "^0.8.1",
+        "caffeinated/modules": "^4.2",
+        "fideloper/proxy": "~3.3",
+        "laravel/framework": "5.5.*",
+        "laravel/tinker": "~1.0",
+        "maatwebsite/excel": "~2.1.0",
+        "predis/predis": "^1.1",
+        "tymon/jwt-auth": "dev-develop"
+    },
+    "require-dev": {
+        "filp/whoops": "~2.0",
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload": {
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+            ]
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate",
+            "@php artisan jwt:secret"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover"
+        ],
+        "setup": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php artisan key:generate",
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover",
+            "@php artisan jwt:secret -f",
+            "@php artisan module:optimize",
+	    "@php artisan storage:link"
+        ],
+        "new-migration-seed": [
+            "@php artisan module:migrate core",
+            "@php artisan module:migrate simdes",
+            "@php artisan module:seed core",
+            "@php artisan module:seed simdes",
+            "@php artisan cache:clear"
+        ],
+        "reset-migration-seed": [
+            "@php artisan module:migrate:reset simdes",
+            "@php artisan module:migrate:reset core",
+            "@php artisan module:migrate core",
+            "@php artisan module:migrate simdes",
+            "@php artisan module:seed core",
+            "@php artisan module:seed simdes",
+            "@php artisan cache:clear"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "name": "Ajaro Core System",
+    "slug": "core",
+    "version": "1.0.0",
+    "description": "this module contains authentication, user, privilege, group, menu, employee, dept, position management"
+}

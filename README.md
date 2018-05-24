@@ -30,13 +30,13 @@ clone project :
 * Dengan https :
 
 ```
-git clone https://gitlab.com/ajaro-id/simdes/simdes-api.git
+git clone https://github.com/ajaroid/andekata-api.git
 ```
 
 * Dengan ssh :
 
 ```
-git clone git@gitlab.com:ajaro-id/simdes/simdes-api.git
+git clone git@github.com:ajaroid/andekata-api.git
 ```
 
 Setelah clone project, install dependensi dengan menjalankan perintah berikut di folder project :
@@ -168,8 +168,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Andhika Yuana** - *yuana* - [Facebook](https://www.facebook.com/yuana.andhika)
-* **Arif Yeri Pratama** - *pirey*
-* **Shinta Saptarini** - *shintasapta*
-* **Syahroni** - *syahrn*
+* **Andhika Yuana** - *@andhikayuana* - [Facebook](https://www.facebook.com/yuana.andhika)
+* **Arif Yeri Pratama** - *@pirey*
+* **Shinta Saptarini** - *@shintasapta*
+* **Syahroni** - *@syahrn*
 

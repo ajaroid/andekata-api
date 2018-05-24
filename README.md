@@ -10,7 +10,7 @@ Andekata merupakan aplikasi untuk mengolah informasi data pada sebuah Desa yang 
 
 ## Andekata API 
 
-Andekata API merupakan Backend sistem yang dikembangkan menggunakan framework PHP Laravel. Andekata API ini dikembangkan untuk memenuhi kebutuhan data [Andekata Web Client] (https://github.com/ajaroid/andekata-client).
+Andekata API merupakan Backend sistem yang dikembangkan menggunakan framework PHP Laravel. Andekata API ini dikembangkan untuk memenuhi kebutuhan data [Andekata Web Client](https://github.com/ajaroid/andekata-client).
 
 ## Requirements
 

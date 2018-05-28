@@ -1,4 +1,3 @@
-
 <h1 align="center">Andekata</h1>
 <p align="center">* version : 1.0.3-beta</p>
 <p align="center">* codename : yudistira</p>
@@ -8,7 +7,7 @@
 
 Andekata merupakan aplikasi untuk mengolah informasi data pada sebuah Desa yang dikembangkan dengan tujuan untuk memenuhi beberapa kebutuhan mulai dari mencatat data kependudukan hingga keperluan administrasi surat menyurat. Untuk kedepannya, aplikasi ini akan terus dikembangkan dengan menyesuaikan kebutuhan yang terus bertambah.
 
-## Andekata API 
+## Andekata API
 
 Andekata API merupakan Backend sistem yang dikembangkan menggunakan framework PHP Laravel. Andekata API ini dikembangkan untuk memenuhi kebutuhan data [Andekata Web Client](https://github.com/ajaroid/andekata-client).
 
@@ -39,38 +38,15 @@ git clone https://github.com/ajaroid/andekata-api.git
 git clone git@github.com:ajaroid/andekata-api.git
 ```
 
-Setelah clone project, install dependensi dengan menjalankan perintah berikut di folder project :
-
-```
-composer install
-```
-
-Setelah itu, jalankan perintah berikut untuk setup konfigurasi :
-```
-composer setup
-```
-
-_Catatan:_ Setelah menjalankan `composer setup` anda akan melihat output seperti ini di terminal :
-```
-> @php -r "file_exists('.env') || copy('.env.example', '.env');"
-> @php artisan key:generate
-Application key [YOUR_APPLICATION_KEY_HERE] set successfully.
-> Illuminate\Foundation\ComposerScripts::postAutoloadDump
-> @php artisan package:discover
-Discovered Package: fideloper/proxy
-Discovered Package: laravel/tinker
-Discovered Package: caffeinated/modules
-Discovered Package: tymon/jwt-auth
-Package manifest generated successfully.
-> @php artisan jwt:secret -f
-jwt-auth secret [YOUR_JWT_SECRET_HERE] set successfully.
-> @php artisan module:optimize
-Generating optimized module cache
-```
-
 ## Setup `.env`
 
-Setelah itu, anda bisa atur konfigurasi database di file `.env`
+Setelah clone project, pastikan terlebih dahulu mengatur konfigurasi di file `.env`
+
+_Catatan:_ Jika belum ada file `.env`, copy file `.env.example` dan beri nama `.env`
+
+Atur konfigurasi database
+
+_Catatan:_ Pastikan sudah ada database yang siap digunakan
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -90,10 +66,39 @@ Ganti CACHE_DRIVER menjadi `redis`
 CACHE_DRIVER=redis
 ```
 
-Jalankan perintah berikut untuk setup folder untuk storage (folder untuk penyimpanan file, media, logs, dll)
+
+## Install Dependensi
+
+Setelah itu, install dependensi dengan menjalankan perintah berikut di folder project :
 
 ```
-php artisan storage:link
+composer install
+```
+
+Setelah itu, jalankan perintah berikut untuk setup konfigurasi :
+```
+composer setup
+```
+
+_Catatan:_ Setelah menjalankan `composer setup` anda akan melihat output seperti ini di terminal :
+```
+> @php artisan key:generate
+Application key [base64:WvL8m2XT0PxN+NeAkN8VIDU6ndR6FTFqqR7RK/PrumI=] set successfully.
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover
+Discovered Package: barryvdh/laravel-dompdf
+Discovered Package: caffeinated/modules
+Discovered Package: fideloper/proxy
+Discovered Package: laravel/tinker
+Discovered Package: maatwebsite/excel
+Discovered Package: tymon/jwt-auth
+Package manifest generated successfully.
+> @php artisan jwt:secret -f
+jwt-auth secret [FujSckTZwNVopRkqaG3CWfQfNExcjrmv] set successfully.
+> @php artisan module:optimize
+Generating optimized module cache
+> @php artisan storage:link
+The [public/storage] directory has been linked.
 ```
 
 ### Database Migration

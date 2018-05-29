@@ -42,9 +42,6 @@
         }
     },
     "scripts": {
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
         "post-create-project-cmd": [
             "@php artisan key:generate",
             "@php artisan jwt:secret"
@@ -54,13 +51,12 @@
             "@php artisan package:discover"
         ],
         "setup": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "@php artisan key:generate",
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover",
             "@php artisan jwt:secret -f",
             "@php artisan module:optimize",
-	    "@php artisan storage:link"
+            "@php artisan storage:link"
         ],
         "new-migration-seed": [
             "@php artisan module:migrate core",
